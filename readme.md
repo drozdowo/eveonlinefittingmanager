@@ -10,4 +10,4 @@ With PYFA being local, and the Eve Online UI being notoriously shitty, this app 
 and from osmium.
 
 ## What will it be built with?
-The front end of the website will be built using React/Redux and Material-UI. The back end will hopefully be implemented using MongoDB and Socket.io for communications between the two. These details are not final.
+The front end of the website will be built using React/Redux and Material-UI. The back end will hopefully be implemented using MongoDB and Socket.io for communications between the two. These details are not final. 
