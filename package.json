@@ -1,0 +1,26 @@
+{
+  "name": "eveonlinefittingmanager",
+  "version": "1.0.0",
+  "description": "Online Fitting Management Tool for Eve Online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drozdowo/eveonlinefittingmanager-client.git"
+  },
+  "keywords": [
+    "eve",
+    "online",
+    "fitting",
+    "manager",
+    "management"
+  ],
+  "author": "Oliver Drozdowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drozdowo/eveonlinefittingmanager-client/issues"
+  },
+  "homepage": "https://github.com/drozdowo/eveonlinefittingmanager-client#readme"
+}
