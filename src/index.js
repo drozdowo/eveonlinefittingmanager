@@ -8,9 +8,9 @@ class App extends React.Component{
         super(props);
         this.state = {toggle: true};
 
-        this.doTest = this.doTest.bind(this);
+        //this.doTest = this.doTest.bind(this);
     }
-    doTest(){
+    doTest = () =>{
         this.setState(prevState => ({
             toggle: !prevState.toggle
         }));
