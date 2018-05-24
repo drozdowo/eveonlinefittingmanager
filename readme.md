@@ -14,12 +14,20 @@ The front end of the website will be built using React/Redux and Material-UI. Th
 
 ## How to get up and running?
 Clone the repository:
+```
     git clone https://github.com/drozdowo/eveonlinefittingmanager.git
+```
 Navigate to the folder:
+```
     cd eveonlinefittingmanager
+```
 Then run:
+```
     npm install
+```
 to install all of the plugins, and finally:
+```
     npm run dev
+```
 to start!
 Now you can navigate to localhost:3030 to view the client side, and the API will be running on localhost:8080 with localhost:3030/api redirecting to localhost:8080!
