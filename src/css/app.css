@@ -1,0 +1,19 @@
+/* Application CSS */
+
+.LayoutContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.HeaderContainer{
+    flex: 10;
+}
+
+.AppContainer {
+    flex: 80;
+}
+
+.FooterContainer{
+    flex: 10;
+}

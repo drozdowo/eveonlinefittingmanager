@@ -1,0 +1,22 @@
+/*  Header CSS 
+*/
+
+.HeaderContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.HeaderLogo {
+    flex: 2;
+    justify-content: center;
+    display:flex;
+}
+
+.HeaderUser {
+    flex: 1;
+    justify-content: center;
+    display: flex;
+}

@@ -7,6 +7,9 @@ import store from '../store.js';
 import * as Actions from '../actions/AppActions.js';
 import { push } from 'react-router-redux';
 import CONSTANTS from '../constants.js';
+import Header from './header/header';
+import Footer from './footer/footer';
+import '../css/app.css';
 
 /*  This should be the entire application. */
 @connect((store) => {
@@ -19,23 +22,23 @@ export default class App extends Component{
         super(props);
     }
     componentWillMount(){
-        if (CONSTANTS.debugging){console.log('Mounting Main Application Component');}
+        if (CONSTANTS.debugging){console.log('DEBUG: Mounting Main Application Component');}
     }
     componentWillUpdate(){
-        if (CONSTANTS.debugging){console.log('Rerendering Main Application Component');}
+        if (CONSTANTS.debugging){console.log('DEBUG: Rerendering Main Application Component');}
     }
     render(){
-        var MainBodyApp = (<div> how'd you get here </div>);
+        var MainBodyApp = (<div className='AppContainer'> how'd you get here </div>);
         if (this.props.location.pathname === '/'){ //Homepage -- display Search
-            MainBodyApp = (<div> Search Box Here </div>);
+            MainBodyApp = (<div className='AppContainer'> Search Box Here </div>);
         } else if (this.props.location.pathname === '/app'){
-            MainBodyApp = (<div> App Here </div> );
+            MainBodyApp = (<div className='AppContainer'> App Here </div> );
         }
         return(
-            <div>
-                <h1>Header</h1>
+            <div className='LayoutContainer'>
+                <Header className='HeaderContainer'/>
                 {MainBodyApp}
-                <h1>Footer</h1>
+                <Footer className='FooterContainer'/>
             </div>
         );
     }
