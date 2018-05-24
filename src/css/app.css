@@ -8,12 +8,15 @@
 
 .HeaderContainer{
     flex: 10;
+    display: flex;
 }
 
 .AppContainer {
     flex: 80;
+    display: flex;
 }
 
 .FooterContainer{
     flex: 10;
+    display: flex;
 }
