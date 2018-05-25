@@ -33,6 +33,8 @@ export default class Search extends Component {
     }
     componentWillMount(){
         if(CONSTANTS.debugging){console.log('DEBUG: Mounted Search Container Component')}
+        //Grab the ship names:
+        
     }
     componentWillUpdate(){
         if(CONSTANTS.debugging){console.log('DEBUG: Updated Search Container Component')}

@@ -5,6 +5,16 @@
 const express = require("express");
 const os = require("os");
 var path = require('path');
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/test');
+
+var Schema = mongoose.Schema;
+
+var shipNames = mongoose.model('shipName', new Schema(
+    {shipName: String}
+), 'shipNames');
+
 
 const app = express();
 
@@ -14,27 +24,13 @@ app.listen(8080, () =>{
     console.log("Listening on port 8080...");
 });
 
-app.route('/api/getShip/:shipId')
+app.route('/api/getShips/')
 .all(function(req, res, next){
-    console.log('got getShip: shipID ', req.params);
+    //Intro
     next();
 })
 .get(function(req, res, next){
-    console.log('got GET request on getShip: shipID ', req.params);
-    if (req.params.shipId === "123"){
-        res.send({
-            shipName: 'Worm',
-            shipType: 'Frigate',
-            shipRace: 'Guristas',
-            shipSlotLayout: {
-                highSlots: 3,
-                midSlots: 4,
-                lowSlots: 3
-            }
-        });    
-    } else {
-        res.send({
-            err: 'Unknown Ship ID!'
-        })
-    }
+    shipNames.find({}, {shipName: 1, _id: 0}, function(err, collection){
+        res.send(collection);
+    });
 })
