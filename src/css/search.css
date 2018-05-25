@@ -5,4 +5,16 @@
     justify-content: center;
     width: 100%;
     align-items: center;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.search-Spacer {
+}
+
+.search-SearchBar{
+    width: 25%;
+    height: 5%;
+    font-size: 24px;
+    text-align: center;
 }

@@ -28,6 +28,7 @@ export default class SearchBar extends Component {
             onBlur = {this.props.handleBlur}
             onFocus = {this.props.handleFocus}
             onChange = {this.props.handleChange}
+            className='search-SearchBar'
             />
         );
     }

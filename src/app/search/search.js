@@ -53,6 +53,8 @@ export default class Search extends Component {
     render(){
         return (
             <div className='search-SearchContainer'>
+                <h1> Check out your favorite ship fits below! </h1>
+                <div className='search-Spacer'/>
                 <SearchBox 
                     isActive={this.props.store.isSearchBarActive}
                     val={this.props.store.searchBarText}
