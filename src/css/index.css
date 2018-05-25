@@ -1,7 +1,7 @@
 .app-container {
     margin: 0px 0px 0px 0px;
-    background-color: #101010;
-    background-image: url("https://wallup.net/wp-content/uploads/2016/01/69246-space-EVE_Online.jpg");
+    background-color: #606060;
+    /*background-image: url("https://wallup.net/wp-content/uploads/2016/01/69246-space-EVE_Online.jpg");*/
     background-position-x: 50%;
     background-position-y: 50%;
     overflow-x: hidden;

@@ -1,22 +1,22 @@
 /* Application CSS */
 
-.LayoutContainer {
+.app-LayoutContainer {
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.HeaderContainer{
+.app-HeaderContainer{
     flex: 10;
     display: flex;
 }
 
-.AppContainer {
+.app-AppContainer {
     flex: 80;
     display: flex;
 }
 
-.FooterContainer{
+.app-FooterContainer{
     flex: 10;
     display: flex;
 }

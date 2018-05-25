@@ -25,7 +25,7 @@ import CONSTANTS from '../../constants';
 export default class Footer extends Component {
     render(){
         return(
-            <div className='FooterContainer'>
+            <div className='footer-FooterContainer'>
                 <h1> Footer </h1>
             </div>
         );

@@ -16,14 +16,12 @@ import store from './store.js';
 import App from "./app/app.js";
 
 
-
-
 const TheApp = (
     <Provider store={store}>
         <Router history={history}>
             <div>
-                <Route path="app" component={App}/>
                 <Route path="/" component={App}/>
+                <Route path="test" component={App}/>
             </div>
         </Router>
     </Provider>

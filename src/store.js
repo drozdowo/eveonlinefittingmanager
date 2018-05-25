@@ -7,12 +7,12 @@ import CONSTANTS from './constants';
 
 import {routerReducer, routerMiddleware } from 'react-router-redux';
 
-const middleware = {};
+var middleware = {};
 
-if (CONSTANTS.debugging){
-    const middleware = applyMiddleware(routerMiddleware(history), thunk, createLogger());    
+if (CONSTANTS.doLogger){
+    middleware = applyMiddleware(routerMiddleware(history), thunk, createLogger());    
 } else {
-    const middleware = applyMiddleware(routerMiddleware(history), thunk);
+    middleware = applyMiddleware(routerMiddleware(history), thunk);
 }
 
 export default createStore(reducers, middleware);

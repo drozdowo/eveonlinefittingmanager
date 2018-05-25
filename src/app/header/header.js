@@ -31,11 +31,11 @@ export default class Header extends Component {
     }
     render(){
         return (
-            <div className='HeaderContainer'>
-                <div className='HeaderLogo'>
+            <div className='header-HeaderContainer'>
+                <div className='header-HeaderLogo'>
                     <h1>Logo Here</h1>
                 </div>
-                <div className='HeaderUser'>    
+                <div className='header-HeaderUser'>    
                     <h1>User Component Here</h1>
                 </div>
             </div>

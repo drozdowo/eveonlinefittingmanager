@@ -1,7 +1,7 @@
 /*  Header CSS 
 */
 
-.HeaderContainer {
+.header-HeaderContainer {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -9,13 +9,13 @@
     border: 1px solid black;
 }
 
-.HeaderLogo {
+.header-HeaderLogo {
     flex: 2;
     justify-content: center;
     display:flex;
 }
 
-.HeaderUser {
+.header-HeaderUser {
     flex: 1;
     justify-content: center;
     display: flex;

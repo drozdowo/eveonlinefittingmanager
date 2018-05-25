@@ -1,29 +1,21 @@
-//React <3
+import '../css/index.css';
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-
-//Import a bunch of redux shit
 import { connect } from 'react-redux';
 import { Provider } from 'react-redux';
 import store from '../store.js';
 import * as Actions from '../actions/AppActions.js';
 import { push } from 'react-router-redux';
 import CONSTANTS from '../constants.js';
-
-//Import our css
-import '../css/app.css';
-import '../css/index.css';
-
-//Import some key components
 import Header from './header/header';
 import Footer from './footer/footer';
-import Search from './search/search'
-
+import Search from './search/search';
+import '../css/app.css';
 
 /*  This should be the entire application. */
 @connect((store) => {
     return {
-        store: store.app
+        store: store
     }
 })
 export default class App extends Component{
@@ -37,19 +29,19 @@ export default class App extends Component{
         if (CONSTANTS.debugging){console.log('DEBUG: Rerendering Main Application Component');}
     }
     render(){
-        var MainBodyApp = (<div className='AppContainer'> how'd you get here </div>);
+        var MainBodyApp = ('how\'d you get here');
         if (this.props.location.pathname === '/'){ //Homepage -- display Search
-            MainBodyApp = (<Search className='AppContainer' />);
+            MainBodyApp =  <Search />
         } else if (this.props.location.pathname === '/app'){
-            MainBodyApp = (<div className='AppContainer'> App Here </div> );
+            MainBodyApp = ('App Here');
         }
         return(
-            <div className='LayoutContainer'>
-                <Header className='HeaderContainer'/>
-                <div className='AppContainer'>
-                    <Search />
-                </div>
-                <Footer className='FooterContainer'/>
+            <div className='app-LayoutContainer'>
+                <Header className='app-HeaderContainer'/>
+                    <div className='app-AppContainer'>
+                        {MainBodyApp}
+                    </div>
+                <Footer className='app-FooterContainer'/>
             </div>
         );
     }
