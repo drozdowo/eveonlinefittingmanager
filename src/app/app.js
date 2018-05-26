@@ -1,16 +1,27 @@
-import '../css/index.css';
+//Inport react, redux, and router
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { connect } from 'react-redux';
 import { Provider } from 'react-redux';
-import store from '../store.js';
-import * as Actions from '../actions/AppActions.js';
 import { push } from 'react-router-redux';
+
+//Store and Actions
+import store from '../store.js';
+import * as appActions from '../actions/AppActions.js';
+import * as getShipsActions from '../actions/GetShipActions.js';
+
+//Constants
 import CONSTANTS from '../constants.js';
+
+//Import some CSS
+import '../css/app.css';
+import '../css/index.css';
+
+//Import Components
 import Header from './header/header';
 import Footer from './footer/footer';
 import Search from './search/search';
-import '../css/app.css';
+
 
 import axios from 'axios';
 
@@ -26,21 +37,24 @@ export default class App extends Component{
     }
     componentWillMount(){
         if (CONSTANTS.debugging){console.log('DEBUG: Mounting Main Application Component');}
-        //All needed data will come from here!
-        axios.get('http://localhost:3030/api/getShips')
-        .then(function(response){
-            console.log('Recieved Ship Names! + ' + response.data.length);
-            for(var i = 0; i < response.data.length; i++){
-                console.log(response.data[i].shipName);
-            }
-        })
-        .catch(function(error){
-            console.log('Error receiving ship names!');
-        });
+        this.getShipNames();
     }
     componentWillUpdate(){
         if (CONSTANTS.debugging){console.log('DEBUG: Rerendering Main Application Component');}
     }
+
+    getShipNames = () =>{
+        //All needed data will come from here!
+        this.props.dispatch(getShipsActions.startFetchingShipNames());
+        axios.get('http://localhost:3030/api/getShips')
+        .then((response) => {
+            this.props.dispatch(getShipsActions.gotFetchingShipNames(response.data))
+        })
+        .catch((error) =>{
+            console.log(error);
+        });
+    }
+
     render(){
         var MainBodyApp = ('how\'d you get here');
         if (this.props.location.pathname === '/'){ //Homepage -- display Search
