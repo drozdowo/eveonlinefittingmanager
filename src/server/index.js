@@ -6,8 +6,10 @@ const express = require("express");
 const os = require("os");
 var path = require('path');
 var mongoose = require('mongoose');
+var CONFIG = require('./serverConfig');
 
-mongoose.connect('mongodb://eve:t3st@192.168.0.162:27017/test');
+
+mongoose.connect('mongodb://' + CONFIG.dbUser  + ':' + CONFIG.dbPass + '@' + CONFIG.dbLoc  + ':' + CONFIG.dbPort + '/' + CONFIG.dbName);
 
 var Schema = mongoose.Schema;
 

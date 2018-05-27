@@ -1,3 +1,5 @@
+use eofm
+db.createCollection('shipNames')
 db.getCollection('shipNames').insertMany([
 {shipName: 'Abaddon'},
 {shipName: 'Absolution'},
