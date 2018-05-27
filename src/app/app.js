@@ -46,7 +46,7 @@ export default class App extends Component{
     getShipNames = () =>{
         //All needed data will come from here!
         this.props.dispatch(getShipsActions.startFetchingShipNames());
-        axios.get('http://localhost:3030/api/getShips')
+        axios.get('http://localhost:3030/api/shipInfo/getShips')
         .then((response) => {
             this.props.dispatch(getShipsActions.gotFetchingShipNames(response.data))
         })

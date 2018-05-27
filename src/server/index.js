@@ -5,18 +5,11 @@
 const express = require("express");
 const os = require("os");
 var path = require('path');
-var mongoose = require('mongoose');
 var CONFIG = require('./serverConfig');
-
+var shipInfo = require('./ShipInfo')
+var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://' + CONFIG.dbUser  + ':' + CONFIG.dbPass + '@' + CONFIG.dbLoc  + ':' + CONFIG.dbPort + '/' + CONFIG.dbName);
-
-var Schema = mongoose.Schema;
-
-var shipNames = mongoose.model('shipName', new Schema(
-    {shipName: String}
-), 'shipNames');
-
 
 const app = express();
 
@@ -26,13 +19,4 @@ app.listen(8080, () =>{
     console.log("Listening on port 8080...");
 });
 
-app.route('/api/getShips/')
-.all(function(req, res, next){
-    //Intro
-    next();
-})
-.get(function(req, res, next){
-    shipNames.find({}, {shipName: 1, _id: 0}, function(err, collection){
-        res.send(collection);
-    });
-})
+app.use('/api/shipInfo', shipInfo);
