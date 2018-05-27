@@ -8,7 +8,7 @@ import { push } from 'react-router-redux';
 //Store and Actions
 import store from '../store.js';
 import * as appActions from '../actions/AppActions.js';
-import * as getShipsActions from '../actions/GetShipActions.js';
+import * as getShipsActions from '../actions/ShipInfoActions';
 
 //Constants
 import CONSTANTS from '../constants.js';

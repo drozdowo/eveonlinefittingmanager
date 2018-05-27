@@ -7,7 +7,7 @@ const os = require("os");
 var path = require('path');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://eve:t3st@192.168.0.162:27017/test');
 
 var Schema = mongoose.Schema;
 
