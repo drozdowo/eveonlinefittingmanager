@@ -20,6 +20,7 @@ import CONSTANTS from '../../constants';
 
 //Import Presentational Components
 import SearchBox from './searchbox';
+import SearchResult from './searchresults';
 
 
 @connect((store) => {
@@ -56,10 +57,10 @@ export default class Search extends Component {
 
         var ResultContainer;
 
-        if (this.props.store.isSearchBarActive){
+        if (this.props.store.isSearchBarActive || this.props.store.searchBarText !== ''){
             ResultContainer = (
             <div className='search-ResultContainer'>
-                <h1> Search Results </h1>
+                <SearchResult/>
             </div>
             );
         } else {

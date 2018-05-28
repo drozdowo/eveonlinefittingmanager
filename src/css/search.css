@@ -38,11 +38,11 @@
     align-items: center;
     flex: 33;
     flex-basis: auto;
-    transition: flex-grow 0.25s linear;
-    flex-grow: 2;
+    transition: flex-grow 0.33s ease;
+    flex-grow: 1;
 }
 
 .search-ResultsContainerEmpty{
-    flex-grow: 0.01;
-    transition: flex-grow 0.125s linear;
+    flex-grow: 0.0000000001;
+    transition: flex-grow 0.25s ease;
 }
