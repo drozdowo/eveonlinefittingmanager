@@ -10,6 +10,7 @@
 }
 
 .search-Spacer {
+    height: 25px;
 }
 
 .search-SearchBar{
@@ -17,4 +18,31 @@
     height: 5%;
     font-size: 24px;
     text-align: center;
+}
+
+.search-NotResultContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+    align-items: center;
+    flex: 33;
+    flex-grow: 1;
+}
+
+.search-ResultContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+    align-items: center;
+    flex: 33;
+    flex-basis: auto;
+    transition: flex-grow 0.25s linear;
+    flex-grow: 2;
+}
+
+.search-ResultsContainerEmpty{
+    flex-grow: 0.01;
+    transition: flex-grow 0.125s linear;
 }

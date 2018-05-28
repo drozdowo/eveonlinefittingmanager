@@ -53,18 +53,36 @@ export default class Search extends Component {
         event.preventDefault();
     }
     render(){
+
+        var ResultContainer;
+
+        if (this.props.store.isSearchBarActive){
+            ResultContainer = (
+            <div className='search-ResultContainer'>
+                <h1> Search Results </h1>
+            </div>
+            );
+        } else {
+            ResultContainer = (<div className='search-ResultsContainerEmpty'>
+                <div />
+            </div>)
+        }
+
         return (
             <div className='search-SearchContainer'>
-                <h1> Check out your favorite ship fits below! </h1>
-                <div className='search-Spacer'/>
-                <SearchBox 
-                    isActive={this.props.store.isSearchBarActive}
-                    val={this.props.store.searchBarText}
-                    initialVal={this.props.store.searchBarInitialValue}
-                    handleChange={this.handleSearchBarChange}
-                    handleBlur={this.handleSearchBarBlur}
-                    handleFocus={this.handleSearchBarFocus}
-                />
+                <div className='search-NotResultContainer'>
+                    <h1> Check out your favorite ship fits below! </h1>
+                    <div className='search-Spacer'/>
+                    <SearchBox 
+                        isActive={this.props.store.isSearchBarActive}
+                        val={this.props.store.searchBarText}
+                        initialVal={this.props.store.searchBarInitialValue}
+                        handleChange={this.handleSearchBarChange}
+                        handleBlur={this.handleSearchBarBlur}
+                        handleFocus={this.handleSearchBarFocus}
+                    />
+                </div>
+                    {ResultContainer}
             </div>
         );
     }
