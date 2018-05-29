@@ -25,7 +25,8 @@ import SearchResult from './searchresults';
 
 @connect((store) => {
     return {
-        store: store.search
+        search: store.search,
+        ships: store.shipInfo
     }
 })
 export default class Search extends Component {
@@ -55,12 +56,16 @@ export default class Search extends Component {
     }
     render(){
 
+        
         var ResultContainer;
 
-        if (this.props.store.isSearchBarActive || this.props.store.searchBarText !== ''){
+        if (this.props.search.isSearchBarActive || this.props.search.searchBarText !== ''){
             ResultContainer = (
             <div className='search-ResultContainer'>
-                <SearchResult/>
+                <SearchResult
+                    ships={this.props.ships}
+                    searchText={this.props.search.searchBarText}
+                />
             </div>
             );
         } else {
@@ -75,9 +80,9 @@ export default class Search extends Component {
                     <h1> Check out your favorite ship fits below! </h1>
                     <div className='search-Spacer'/>
                     <SearchBox 
-                        isActive={this.props.store.isSearchBarActive}
-                        val={this.props.store.searchBarText}
-                        initialVal={this.props.store.searchBarInitialValue}
+                        isActive={this.props.search.isSearchBarActive}
+                        val={this.props.search.searchBarText}
+                        initialVal={this.props.search.searchBarInitialValue}
                         handleChange={this.handleSearchBarChange}
                         handleBlur={this.handleSearchBarBlur}
                         handleFocus={this.handleSearchBarFocus}

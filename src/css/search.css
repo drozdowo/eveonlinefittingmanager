@@ -37,12 +37,23 @@
     width:100%;
     align-items: center;
     flex: 33;
-    flex-basis: auto;
-    transition: flex-grow 0.33s ease;
     flex-grow: 1;
+    flex-shrink: 1;
+    transition: flex-grow 0.33s ease;
+    max-height: 33%;
 }
 
 .search-ResultsContainerEmpty{
     flex-grow: 0.0000000001;
     transition: flex-grow 0.25s ease;
+}
+
+.search-ListContainer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: red;
 }

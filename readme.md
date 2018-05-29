@@ -31,3 +31,8 @@ to install all of the plugins, and finally:
 ```
 to start!
 Now you can navigate to localhost:3030 to view the client side, and the API will be running on localhost:8080 with localhost:3030/api redirecting to localhost:8080!
+
+Now the server needs to be set up (pain in the ass)
+In our case, we have a local MongoDB Instance running, with a db named 'eofm', with a user named 'eve' and password 'test' with the roles: 'readWrite' on said db 'eofm'.
+
+Go into the src/server/dbInserts to get the inserts for the eofm db to get the app running.

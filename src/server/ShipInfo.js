@@ -20,4 +20,12 @@ router.route('/getShips')
     });
 })
 
+router.route('/getShipTypeId/:shipName')
+.all((req, res, next)=>{
+
+})
+.post((req,res,next)=>{
+    console.log(req);
+})
+
 module.exports = router;
