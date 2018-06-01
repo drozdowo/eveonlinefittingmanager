@@ -22,6 +22,7 @@ import Header from './header/header';
 import Footer from './footer/footer';
 import Search from './search/search';
 
+import background from '../images/bg.jpg';
 
 import axios from 'axios';
 

@@ -15,6 +15,10 @@ import { Route } from 'react-router';
 import store from './store.js';
 import App from "./app/app.js";
 
+import spacebg from './images/bg.jpg';
+
+var bg = document.getElementById('bgme');
+bg.background = spacebg;
 
 const TheApp = (
     <Provider store={store}>

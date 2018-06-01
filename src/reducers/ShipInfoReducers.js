@@ -1,5 +1,5 @@
 const initialState = {
-    shipNameArray: [],
+    shipInfoArray: [],
     isFetchingShipNames: false,
     didFetchShipArray: false,
     isError: false,
@@ -9,7 +9,7 @@ export default function reducer(state=initialState, action){
     if (action.type === 'GOT_SHIP_ARRAY'){
         return {
             ...state,
-            shipNameArray: action.payload.shipNameArray,
+            shipInfoArray: action.payload.shipInfoArray,
             isFetchingShipNames: false,
             didFetchShipArray: true,
             isError: false
@@ -18,14 +18,14 @@ export default function reducer(state=initialState, action){
     else if (action.type === 'FETCHING_SHIP_ARRAY'){
         return {
             ...state,
-            isFetchingShipNames: true,
+            isFetchingShipInfo: true,
             isError: false
         }
     }
     else if (action.type === 'FETCHING_SHIP_ARRAY_FAILED'){
         return {
             ...state,
-            isFetchingShipNames: false,
+            isFetchingShipInfo: false,
             didFetchShipArray: false,
             isError: true,
             error: action.payload.error

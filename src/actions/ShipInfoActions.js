@@ -17,7 +17,7 @@ export function gotFetchingShipNames(shipArr){
     return {
         type: 'GOT_SHIP_ARRAY',
         payload: {
-            shipNameArray: shipArr
+            shipInfoArray: shipArr
         }
     }
 }

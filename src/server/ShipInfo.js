@@ -5,9 +5,13 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-var shipNames = mongoose.model('shipName', new Schema({
-    shipName: String
-}), 'shipNames');
+var shipInfo = mongoose.model('shipInfo',new Schema({
+    typeId: String,
+    typeName: String,
+    description: String,
+    raceName: String
+}),
+'shipInfo');
 
 router.route('/getShips')
 .all(function(req, res, next){
@@ -15,7 +19,7 @@ router.route('/getShips')
     next();
 })
 .get(function(req, res, next){
-    shipNames.find({}, {shipName: 1, _id: 0}, function(err, collection){
+    shipInfo.find({}, function(err, collection){
         res.send(collection);
     });
 })
