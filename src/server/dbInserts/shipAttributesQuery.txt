@@ -1,11 +1,13 @@
-SELECT  a.typeID, a.attributeID, b.attributeName, b.displayName, b.description, a.valueInt, a.valueFloat
-FROM dgmTypeAttributes as a, dgmAttributeTypes as b
+SELECT  f.typeName, g.raceName, a.typeID, a.attributeID, b.attributeName, b.displayName, b.description, a.valueInt, a.valueFloat
+FROM dgmTypeAttributes as a, dgmAttributeTypes as b, invTypes as f, chrRaces as g
 WHERE a.typeID IN ( 
 					SELECT c.typeID 
 					FROM invTypes c, invGroups d
 					WHERE d.groupID in (
 											SELECT groupId FROM invGroups WHERE categoryId = 6
 										)
-					
+					AND d.groupID = c.groupID
 					)
-AND a.attributeID = b.attributeID;
+AND a.attributeID = b.attributeID
+AND f.typeID = a.typeID
+AND f.raceID = g.raceID;
