@@ -13,6 +13,20 @@ var shipInfo = mongoose.model('shipInfo',new Schema({
 }),
 'shipInfo');
 
+var shipAttributes = mongoose.model('shipAttributes', 
+    new Schema({
+        typeName: String,
+        raceName: String,
+        typeID: Number,
+        attributeID: Number,
+        attributeName: String,
+        displayName: String,
+        description: String,
+        valueInt: Number,
+        valueFloat: Number
+    }),
+'shipAttributes');
+
 router.route('/getShips')
 .all(function(req, res, next){
     //Intro
@@ -26,10 +40,34 @@ router.route('/getShips')
 
 router.route('/getShipTypeId/:shipName')
 .all((req, res, next)=>{
-
+    next();
 })
-.post((req,res,next)=>{
-    console.log(req);
+.get((req,res,next)=>{
+    shipInfo.find({shipName: req.params.shipName},
+    {typeID: 1, _id: 0},
+    function(err, collection){
+        if (collection.length > 0){
+            res.send(collection);
+        } else {
+            res.send("{\"error\": \"Invalid Ship Name!\"}");
+        }
+    });
+})
+
+
+router.route('/getShipAttributes/:typeID')
+.all((req, res, next)=>{
+    next();
+})
+.get((req, res, next) => {
+    shipAttributes.find({typeID: req.params.typeID}, 
+    function(err, collection){
+        if (collection.length > 0){
+            res.send(collection);
+        } else {
+            res.send("{\"error\":\"No data found.\"}");
+        }
+    });
 })
 
 module.exports = router;
