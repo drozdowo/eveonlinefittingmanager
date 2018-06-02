@@ -1,0 +1,5 @@
+SELECT t.typeId, t.typeName, t.description, r.raceName
+FROM invTypes t, chrRaces r
+inner join chrRaces on t.raceId = r.raceId
+WHERE t.groupId in(SELECT groupId FROM invGroups WHERE categoryId = 6)
+group by typeId

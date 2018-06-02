@@ -1,0 +1,11 @@
+SELECT  a.typeID, a.attributeID, b.attributeName, b.displayName, b.description, a.valueInt, a.valueFloat
+FROM dgmTypeAttributes as a, dgmAttributeTypes as b
+WHERE a.typeID IN ( 
+					SELECT c.typeID 
+					FROM invTypes c, invGroups d
+					WHERE d.groupID in (
+											SELECT groupId FROM invGroups WHERE categoryId = 6
+										)
+					
+					)
+AND a.attributeID = b.attributeID;
