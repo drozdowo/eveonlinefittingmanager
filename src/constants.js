@@ -1,6 +1,6 @@
 const CONSTANTS = {
     debugging: false,
-    doLogger: true
+    doLogger: false
 };
 
 export default CONSTANTS;

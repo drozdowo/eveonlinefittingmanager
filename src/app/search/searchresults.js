@@ -10,10 +10,18 @@ import Result from './searchresult';
 export default class SearchResult extends Component {
     constructor(props){
         super(props);
+        console.log(props);
     }
     getShipList = () =>{
         var shipList = [];
-        this.props.ships.shipInfoArray.forEach((ship)=>{
+        if (this.props.searchText.length < 1){
+            return null;
+        }
+        if (this.props.ships.shipInfoArray === undefined){
+            return null;
+        }
+        for(var i = 0; i < this.props.ships.shipInfoArray.length; i++){
+            var ship = this.props.ships.shipInfoArray[i];
             if (ship.shipName.toLowerCase().includes(this.props.searchText.toLowerCase())){
                 var shipDesc = ship.description+'';
                 if (shipDesc.length > 302){
@@ -25,11 +33,12 @@ export default class SearchResult extends Component {
                                     shipTypeId={ship.typeID}
                                     description={ship.description}
                                     race={ship.raceName}
-                                    description={shipDesc}/>
+                                    description={shipDesc}
+                                    onClickShipResult={this.props.onClickShipResult}
+                                    />
                 )
             }
-            return null;
-        });
+        }
         return shipList;
     }
     

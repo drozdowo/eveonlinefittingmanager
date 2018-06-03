@@ -86,6 +86,11 @@
     align-items: stretch;
     color: silver;
     display: flex;
+
+}
+
+.search-ResultBox > .resname:hover {
+    cursor: default;
 }
 
 .search-ResultBox > .resdesc{
@@ -98,6 +103,11 @@
     text-overflow: ellipsis;
     overflow-y: hidden;
     padding: 5px 10px 5px 10px;
+
+}
+
+.search-ResultBox > .resdesc:hover{
+    cursor: default;
 }
 
 
@@ -107,4 +117,19 @@
     justify-content: center;
     color: silver;
     align-items: center;
+}
+
+.search-ResultBox > .resinfo:hover{
+    cursor: default;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    pointer-events: none;
 }

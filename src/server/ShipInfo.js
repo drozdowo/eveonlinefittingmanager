@@ -35,7 +35,7 @@ router.route('/getShips')
 .get(function(req, res, next){
     shipInfo.find({}, function(err, collection){
         res.send(collection);
-    });
+    }).sort({shipName: 1});
 })
 
 router.route('/getShipTypeId/:shipName')

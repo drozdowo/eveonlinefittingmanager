@@ -54,17 +54,21 @@ export default class Search extends Component {
         this.props.dispatch(action.searchBarFocus());
         event.preventDefault();
     }
+    onClickShipResult = (shipTypeID) => {
+        console.log('Ship ID: ' + shipTypeID);
+    }
     render(){
 
         
         var ResultContainer;
 
-        if (this.props.search.isSearchBarActive || this.props.search.searchBarText !== ''){
+        if (this.props.search.isSearchBarActive || this.props.search.searchBarText.length >= 1){
             ResultContainer = (
             <div className='search-ResultContainer'>
                 <SearchResult
                     ships={this.props.ships}
                     searchText={this.props.search.searchBarText}
+                    onClickShipResult={this.onClickShipResult}
                 />
             </div>
             );
