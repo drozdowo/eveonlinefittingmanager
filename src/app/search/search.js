@@ -55,7 +55,7 @@ export default class Search extends Component {
         event.preventDefault();
     }
     onClickShipResult = (shipTypeID) => {
-        console.log('Ship ID: ' + shipTypeID);
+        this.props.dispatch(action.selectedShip(shipTypeID));
     }
     render(){
 

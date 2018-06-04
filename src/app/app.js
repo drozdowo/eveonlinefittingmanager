@@ -24,6 +24,10 @@ import Search from './search/search';
 
 import background from '../images/bg.jpg';
 
+
+//Modal Components
+import ModalShipSelect from './modals/ModalShipSelect'
+
 import axios from 'axios';
 
 /*  This should be the entire application. */
@@ -55,7 +59,23 @@ export default class App extends Component{
             console.log(error);
         });
     }
-
+    shouldDoModal = () => {
+        var toRet = null;
+        if(this.props.store.shipInfo.selectedShipTypeId !== null
+            ){
+            console.log('returning modalMenu')
+            toRet = (
+                <div className='app-modalOverlay'>
+                    <div className='app-modalMenu'>
+                        <ModalShipSelect
+                        shipTypeID={this.props.store.shipInfo.selectedShipTypeId}
+                        />
+                    </div>
+                </div>
+            );
+        }
+        return toRet;
+    }
     render(){
         var MainBodyApp = ('how\'d you get here');
         if (this.props.location.pathname === '/'){ //Homepage -- display Search
@@ -65,6 +85,7 @@ export default class App extends Component{
         }
         return(
             <div className='app-LayoutContainer'>
+                {this.shouldDoModal()}
                 <Header className='app-HeaderContainer'/>
                     <div className='app-AppContainer'>
                         {MainBodyApp}

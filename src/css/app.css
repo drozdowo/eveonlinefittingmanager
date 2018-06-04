@@ -20,3 +20,34 @@
     flex: 10;
     display: flex;
 }
+
+.app-modalOverlay{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0, 0.8);
+
+}
+.app-modalMenu{
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    top: calc(50% - 101px);
+    left: calc(50% - 201px);
+    color: white;
+    background-color: #303030;
+    border-radius: 3px;
+    border: 2px solid #505050;
+    box-shadow: 3px 3px 3px 3px rgba(0.2, 0.2, 0.2, 0.5);
+    animation-name: modalIn;
+    animation-duration: 0.5s;
+}
+
+@keyframes modalIn {
+    from {
+        top: -300px;
+    }
+    to {
+        top: calc(50%-101px);
+    }
+}
