@@ -9,6 +9,8 @@ import { push } from 'react-router-redux';
 import store from '../store.js';
 import * as appActions from '../actions/AppActions.js';
 import * as getShipsActions from '../actions/ShipInfoActions';
+import * as searchActions from '../actions/SearchActions';
+
 
 //Constants
 import CONSTANTS from '../constants.js';
@@ -59,13 +61,16 @@ export default class App extends Component{
             console.log(error);
         });
     }
+    hideModal = () => {
+        this.props.dispatch(searchActions.selectedShip(null));
+    }
     shouldDoModal = () => {
         var toRet = null;
         if(this.props.store.shipInfo.selectedShipTypeId !== null
             ){
             console.log('returning modalMenu')
             toRet = (
-                <div className='app-modalOverlay'>
+                <div className='app-modalOverlay' onClick={this.hideModal}>
                     <div className='app-modalMenu'>
                         <ModalShipSelect
                         shipTypeID={this.props.store.shipInfo.selectedShipTypeId}
