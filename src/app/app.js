@@ -66,14 +66,12 @@ export default class App extends Component{
     }
     shouldDoModal = () => {
         var toRet = null;
-        if(this.props.store.shipInfo.selectedShipTypeId !== null
-            ){
-            console.log('returning modalMenu')
+        if(this.props.store.shipInfo.selectedShipInfoArray !== null){
             toRet = (
                 <div className='app-modalOverlay' onClick={this.hideModal}>
                     <div className='app-modalMenu'>
                         <ModalShipSelect
-                        shipTypeID={this.props.store.shipInfo.selectedShipTypeId}
+                        shipInfo={this.props.store.shipInfo.selectedShipInfoArray}
                         />
                     </div>
                 </div>

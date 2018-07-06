@@ -20,11 +20,11 @@ export function searchBarBlur(){
 }
 
 
-export function selectedShip(shipTypeId){
+export function selectedShip(shipInfoArray){
     return {
         type: 'SELECTED_SHIP_ID',
         payload: {
-            shipTypeId: shipTypeId
+            selectedShipInfoArray: shipInfoArray
         }
     }
 }

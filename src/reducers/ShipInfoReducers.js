@@ -3,7 +3,7 @@ const initialState = {
     isFetchingShipNames: false,
     didFetchShipArray: false,
     isError: false,
-    selectedShipTypeId: null,
+    selectedShipInfoArray: null,
     error: {}
 }
 export default function reducer(state=initialState, action){
@@ -35,7 +35,7 @@ export default function reducer(state=initialState, action){
     else if (action.type === 'SELECTED_SHIP_ID'){
         return {
             ...state,
-            selectedShipTypeId: action.payload.shipTypeId
+            selectedShipInfoArray: action.payload.selectedShipInfoArray
         }
     }
     return state;

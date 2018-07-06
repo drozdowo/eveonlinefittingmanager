@@ -34,6 +34,7 @@ export default class SearchResult extends Component {
                                     description={ship.description}
                                     race={ship.raceName}
                                     description={shipDesc}
+                                    shipInfoArray={ship}
                                     onClickShipResult={this.props.onClickShipResult}
                                     />
                 )

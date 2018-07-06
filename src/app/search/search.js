@@ -54,8 +54,8 @@ export default class Search extends Component {
         this.props.dispatch(action.searchBarFocus());
         event.preventDefault();
     }
-    onClickShipResult = (shipTypeID) => {
-        this.props.dispatch(action.selectedShip(shipTypeID));
+    onClickShipResult = (shipInfoArray) => {
+        this.props.dispatch(action.selectedShip(shipInfoArray));
     }
     render(){
 

@@ -11,11 +11,11 @@ export default class ModalShipSelect extends Component{
         super(props);
     }
     render(){
-        var imgSrc = 'https://image.eveonline.com/Render/'+this.props.shipTypeID+'_64.png';
+        var imgSrc = 'https://image.eveonline.com/Render/'+this.props.shipInfo.typeID+'_64.png';
         return(
             <div>
                 <img src={imgSrc}/>
-                Selected Ship TypeID: {this.props.shipTypeID}
+                {this.props.shipInfo.shipName}
             </div>
         )
     }
